@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 34th Anniversary | Mom & Dad</title>
+    <meta name="description" content="Celebrating 34 beautiful years of marriage.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="container" id="main-content">
+        <div class="hero-section">
+            <div class="image-section">
+                <img src="parents.jpg" alt="A beautiful moment of Mom and Dad together" id="parents-img">
+            </div>
+            
+            <div class="content-section">
+                <div class="badge">A Lifetime of Love</div>
+                
+                <h1>34 Years of <br>Pure Magic</h1>
+                
+                <p class="message-paragraph">
+                    Through every season, your love has been the steady heartbeat of our family. You've taught us that a great marriage isn't just about finding the right person, but about <span class="highlight">continuously building a beautiful life together</span> with kindness and shared dreams.
+                </p>
+                
+                <p class="message-paragraph">
+                    Today, we celebrate the legacy of warmth, laughter, and unwavering partnership you've created. You are our greatest inspiration.
+                </p>
+                
+                <div class="signature-container">
+                    <p class="signature">— From your loving son, Damian</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="counter-box">
+            <div class="counter-item">
+                <div class="counter-value" id="years">34</div>
+                <div class="counter-label">Years</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" id="months">0</div>
+                <div class="counter-label">Months</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" id="days">0</div>
+                <div class="counter-label">Days</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" id="hours">0</div>
+                <div class="counter-label">Hours</div>
+            </div>
+        </div>
+
+        <div class="guestbook-section" id="guestbook">
+            <h2>Wishes & Memories</h2>
+            
+            <!-- Legacy Comments (Preserved from original Guestbook) -->
+            <div class="comments-feed" id="legacy-comments-container">
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <span class="comment-author">Oluwafolajimi (Grandson)</span>
+                        <span class="comment-time">April 25, 2026</span>
+                    </div>
+                    <div class="comment-text">Happy 34th Wedding Anniversary Grandpa and Grandma!</div>
+                </div>
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <span class="comment-author">Sukanmi</span>
+                        <span class="comment-time">April 25, 2026</span>
+                    </div>
+                    <div class="comment-text">Happy anniversary pa and ma ….this is the epitome of love ..I hope and pray that I would also be able to celebrate this kind of accomplishment with my wife also …..may you continue to find comfort in each other for the rest of your days …..happy anniversary sir and ma <br><br>Damian’s friend</div>
+                </div>
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <span class="comment-author">Ayomitide Owolabi</span>
+                        <span class="comment-time">April 25, 2026</span>
+                    </div>
+                    <div class="comment-text">Happy 34th wedding anniversary Mummy and Daddy. Wishing you both many more beautiful, fruitful, and joy filled years together. I pray that God continues to uphold your union, strengthen your love, and bless you with good health, long life, peace, and prosperity.</div>
+                </div>
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <span class="comment-author">Opeoluwa Jobs</span>
+                        <span class="comment-time">April 25, 2026</span>
+                    </div>
+                    <div class="comment-text">Happy 34th Wedding Anniversary, Chief and Mrs. Ogedengbe! What an incredible milestone! 34 years of love, commitment, and shared memories.</div>
+                </div>
+            </div>
+
+            <!-- New Giscus Guestbook will be injected here for permanent cloud storage -->
+            <div id="giscus-container" style="margin-top: 4rem;">
+                <p style="text-align: center; color: var(--text-muted); font-style: italic;">Permanent Guestbook loading...</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Anniversary Counter Logic
+        function updateCounter() {
+            const startDate = new Date('1992-04-25T00:00:00'); // Assuming April 25, 1992
+            const now = new Date();
+            const diff = now - startDate;
+
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            document.getElementById('years').innerText = years;
+            document.getElementById('months').innerText = months;
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+
+        // 3D Tilt Effect
+        const container = document.getElementById('main-content');
+        container.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 900) {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 100;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 100;
+                container.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            }
+        });
+        container.addEventListener('mouseleave', () => {
+            container.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg)`;
+            container.style.transition = "transform 0.5s ease";
+        });
+        container.addEventListener('mouseenter', () => {
+            container.style.transition = "none";
+        });
+    </script>
+</body>
+</html>
