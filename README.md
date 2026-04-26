@@ -10,6 +10,8 @@ A premium, interactive, and 100% permanent digital celebration built as a gift f
 ## ✨ Features
 ![Architecture Diagram](architecture_diagram.png)
 
+![Architecture Diagram](architecture_diagram.png)
+
 - **Real-Time Anniversary Counter**: A dynamic JavaScript counter that calculates their marriage duration (Years, Months, Days, Hours) in real-time.
 - **Premium 'Dark Pearl' Aesthetic**: Custom Vanilla CSS featuring glassmorphism, 3D tilt interactions (Vanilla JS), and responsive 'floating orb' backgrounds.
 - **Global Guestbook**: Integrated **Disqus** for a cloud-hosted, real-time comment system that allows family members to post well-wishes from anywhere in the world.
