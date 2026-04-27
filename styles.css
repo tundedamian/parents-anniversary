@@ -322,3 +322,19 @@ textarea.input-field {
   .content-section { padding: 4rem 2rem; }
 }
 
+/* Footer */
+.site-footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--glass-border);
+  width: 100%;
+}
+
+.site-footer p {
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
