@@ -314,11 +314,35 @@ textarea.input-field {
   opacity: 0.6;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--primary-bg);
+  background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+  color: var(--text-main);
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media (max-width: 900px) {
+  body {
+    padding: 0;
+  }
+
+  .container {
+    border-radius: 0;
+    border: none;
+    max-width: 100%;
+  }
+
   .hero-section { grid-template-columns: 1fr; }
   .image-section { height: 400px; }
   .content-section { padding: 3rem 1.5rem; }
-  h1 { font-size: 2.5rem; text-align: center; }
+  h1 { font-size: 2.2rem; text-align: center; }
   .badge { align-self: center; }
   .signature-container { text-align: center; }
   
@@ -340,13 +364,14 @@ textarea.input-field {
 
 /* Footer */
 .site-footer {
-  margin-top: 4rem;
-  padding: 2rem;
+  margin-top: auto;
+  padding: 3rem 1.5rem;
   text-align: center;
   color: var(--text-muted);
   font-size: 0.85rem;
   border-top: 1px solid var(--glass-border);
   width: 100%;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .site-footer p {
