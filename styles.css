@@ -316,10 +316,26 @@ textarea.input-field {
 
 @media (max-width: 900px) {
   .hero-section { grid-template-columns: 1fr; }
-  .image-section { min-height: 400px; }
-  .counter-box { grid-template-columns: 1fr 1fr; }
-  h1 { font-size: 3rem; }
-  .content-section { padding: 4rem 2rem; }
+  .image-section { height: 400px; }
+  .content-section { padding: 3rem 1.5rem; }
+  h1 { font-size: 2.5rem; text-align: center; }
+  .badge { align-self: center; }
+  .signature-container { text-align: center; }
+  
+  .counter-box { 
+    grid-template-columns: repeat(3, 1fr); 
+    padding: 1.5rem 1rem;
+    gap: 0.75rem;
+  }
+  
+  .counter-value { font-size: 1.8rem; }
+  .counter-label { font-size: 0.6rem; }
+}
+
+@media (max-width: 480px) {
+  .counter-box { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
 }
 
 /* Footer */
