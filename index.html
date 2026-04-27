@@ -16,6 +16,14 @@
         <div class="orb orb-3"></div>
     </div>
 
+    <!-- Music Controller -->
+    <div class="music-control" id="music-toggle" title="Toggle Music">
+        <span class="music-icon">🎵</span>
+        <audio id="bg-music" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
     <main class="container" id="main-content">
         <div class="hero-section">
             <div class="image-section">
@@ -196,5 +204,32 @@
         <p>&copy; 2026 Tunde Damian. All rights reserved.</p>
         <p>Built with ❤️ for Mom & Dad's 34th Anniversary.</p>
     </footer>
+    <script>
+        // Music Controller Logic
+        const musicToggle = document.getElementById('music-toggle');
+        const bgMusic = document.getElementById('bg-music');
+        let isPlaying = false;
+
+        musicToggle.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicToggle.classList.add('muted');
+            } else {
+                bgMusic.play();
+                musicToggle.classList.remove('muted');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Autoplay workaround: Start music on first interaction
+        document.body.addEventListener('click', () => {
+            if (!isPlaying) {
+                bgMusic.play().then(() => {
+                    isPlaying = true;
+                    musicToggle.classList.remove('muted');
+                }).catch(e => console.log("Autoplay blocked:", e));
+            }
+        }, { once: true });
+    </script>
 </body>
 </html>
