@@ -51,12 +51,20 @@
                 <div class="counter-label">Months</div>
             </div>
             <div class="counter-item">
-                <div class="counter-value" id="days">0</div>
+                <div class="counter-value" id="days">2</div>
                 <div class="counter-label">Days</div>
             </div>
             <div class="counter-item">
                 <div class="counter-value" id="hours">0</div>
-                <div class="counter-label">Hours</div>
+                <div class="counter-label">Hrs</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" id="minutes">0</div>
+                <div class="counter-label">Min</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-value" id="seconds">0</div>
+                <div class="counter-label">Sec</div>
             </div>
         </div>
 
@@ -123,6 +131,20 @@
             let months = now.getMonth() - start.getMonth();
             let days = now.getDate() - start.getDate();
             let hours = now.getHours() - start.getHours();
+            let minutes = now.getMinutes() - start.getMinutes();
+            let seconds = now.getSeconds() - start.getSeconds();
+
+            // Adjust for negative seconds
+            if (seconds < 0) {
+                seconds += 60;
+                minutes--;
+            }
+
+            // Adjust for negative minutes
+            if (minutes < 0) {
+                minutes += 60;
+                hours--;
+            }
 
             // Adjust for negative hours
             if (hours < 0) {
@@ -132,7 +154,6 @@
 
             // Adjust for negative days
             if (days < 0) {
-                // Get days in the previous month
                 const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
                 days += lastMonth.getDate();
                 months--;
@@ -148,6 +169,8 @@
             document.getElementById('months').innerText = months;
             document.getElementById('days').innerText = days;
             document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
         }
         setInterval(updateCounter, 1000);
         updateCounter();

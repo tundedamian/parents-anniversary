@@ -175,10 +175,10 @@ h1 {
 /* Counter Section */
 .counter-box {
   background: rgba(255, 255, 255, 0.02);
-  padding: 3rem;
+  padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
   border-bottom: 1px solid var(--glass-border);
 }
 
@@ -188,16 +188,16 @@ h1 {
 
 .counter-value {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--accent-gold);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .counter-label {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   color: var(--text-muted);
 }
 
